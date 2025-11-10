@@ -1,2 +1,36 @@
-# QueueCTL---Backend-Developer-Internship-Assignment
-Build a **CLI-based background job queue system** called `queuectl`.  This system would manage background jobs with worker processes, handle retries using exponential backoff, and maintain a **Dead Letter Queue (DLQ)** for permanently failed jobs.
+# 🧠 QueueCTL – CLI-Based Background Job Queue System
+
+`QueueCTL` is a lightweight **Python-based background job queue** that lets you enqueue shell commands, run them with worker processes, handle retries with exponential backoff, and manage a **Dead Letter Queue (DLQ)** — all from the command line.
+
+---
+
+## 🚀 Features
+
+- 🧾 **Job Queue Management** – Enqueue shell commands to run asynchronously  
+- ⚙️ **Worker Processes** – Run multiple workers concurrently using `multiprocessing`  
+- 🔁 **Retry & DLQ Handling** – Automatically retry failed jobs and move permanently failed ones to DLQ  
+- 💾 **Persistent Storage** – Uses SQLite for job state tracking  
+- 🧩 **Simple CLI Interface** – Manage queue, workers, and DLQ directly from terminal  
+
+---
+
+## 📦 Tech Stack
+
+| Component | Description |
+|------------|--------------|
+| Language | Python 3.8+ |
+| Database | SQLite |
+| Concurrency | `multiprocessing` |
+| CLI Parsing | `argparse` |
+| Process Execution | `subprocess` |
+
+---
+
+## 🧰 Installation
+
+```bash
+git clone https://github.com/<your-username>/queuectl.git
+cd queuectl
+python -m venv .venv
+.venv\Scripts\activate   # (on Windows)
+pip install -r requirements.txt  # if you add any in the future
